@@ -14,7 +14,8 @@
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#catalogo">Celulares</a>
-            <a href="#carrito">Mi carrito (<span id="cantidad-carrito">0</span>)</a>
+            <a href="#" id="abrir-carrito">Mi carrito (<span id="cantidad-carrito">0</span>)</a>
+            <div id="menu-sesion" class="menu-sesion"></div>
         </nav>
     </header>
 
@@ -44,19 +45,28 @@
             <p id="estado">Cargando celulares...</p>
             <div id="productos" class="productos"></div>
         </section>
-
-        <section class="carrito" id="carrito">
-            <div class="titulo-seccion">
-                <p class="etiqueta">TU COMPRA</p>
-                <h2>Mi carrito</h2>
-            </div>
-
-            <div id="lista-carrito"></div>
-            <div class="resumen">
-                <h3 id="total">Total: $0.00 MXN</h3>
-            </div>
-        </section>
     </main>
+
+    <div id="fondo-carrito" class="fondo-carrito"></div>
+
+    <aside id="panel-carrito" class="panel-carrito">
+        <div class="panel-encabezado">
+            <h2>Mi carrito</h2>
+            <button id="cerrar-carrito" class="cerrar" aria-label="Cerrar">✕</button>
+        </div>
+
+        <div id="lista-carrito" class="panel-lista"></div>
+
+        <div class="panel-pie">
+            <div class="panel-total">
+                <span>Total</span>
+                <strong id="total">$0.00 MXN</strong>
+            </div>
+            <button id="confirmar" class="boton">Confirmar compra</button>
+            <button id="vaciar" class="vaciar">Vaciar carrito</button>
+            <p id="mensaje-carrito"></p>
+        </div>
+    </aside>
 
     <footer>
         <a href="#" class="logo">CellStore<span>.</span></a>

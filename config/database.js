@@ -1,12 +1,13 @@
-
-const sql = require('mssql/msnodesqlv8');
+const sql = require('mssql');
 
 const configuracion = {
-    connectionString: 'Driver={ODBC Driver 18 for SQL Server};Server=localhost\\SQLEXPRESS;Database=CellStore;Trusted_Connection=Yes;TrustServerCertificate=Yes;'
+    server: 'localhost',
+    database: 'CellStore',
+    user: 'TU_USUARIO_SQL',
+    password: 'TU_PASSWORD_SQL',
+    options: { trustServerCertificate: true, encrypt: false, instanceName: 'SQLEXPRESS' }
 };
 
-const conectar = async () => {
-    return await sql.connect(configuracion);
-};
+const conectar = async () => await sql.connect(configuracion);
 
 module.exports = { sql, conectar };
